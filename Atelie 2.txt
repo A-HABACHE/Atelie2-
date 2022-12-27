@@ -1,0 +1,73 @@
+1. Créer une liste en choisissant des éléments d'index impair dans la première liste et des
+éléments d'index pair dans la seconde.
+Étant donné deux listes, l1 et l2, écrivez un programme pour créer une troisième liste l3 en
+choisissant un élément d'indice impair dans la liste l1 et des éléments d'indice pair dans la liste
+l2.
+***************************
+
+def liste(l1,l2):
+  return (l1[1::2]+l2[::2])
+l1=[3, 6, 9, 12, 15, 18, 21]  
+l2=[4, 8, 12, 16, 20, 24, 28]
+l3=liste(l1,l2)
+print(l3)
+-------------------------------------------------------------------
+2. Deviser la liste en 3 morceaux égaux et inverser chaque morceau
+****************************
+def listRev(liste):
+  if len(liste)%3==1 :
+    liste.extend([0,0])
+  elif len(liste)%3==2 :
+    liste.append(0)
+  else :
+    liste
+  lc=len(liste)//3
+  res=[]
+  for i in range (3):
+    esr=[]
+    for j in range (lc):
+      esr.append(liste[lc*i+j])
+    res.append(esr[::-1])
+  return res 
+liste=[11, 45, 8, 23, 14, 12, 78, 45, 89]
+print(listRev(liste))
+--------------------------------------------------------------------
+3. Écrire un programme pour itérer une liste donnée et compter l'occurrence de chaque élément et
+créer un dictionnaire pour montrer le nombre de chaque élément.
+********************************
+counts = {}
+l=[11, 45, 8, 11, 23, 45, 23, 45, 89]
+for element in l:
+  if element not in counts:
+    counts[element] = 1
+  else:
+    counts[element] += 1
+
+print(counts)
+------------------------------------------------------------------------
+4. Trouver l'intersection (commune) de deux Sets et supprimez ces éléments du premier Set
+**********************************
+
+l1={23, 42, 65, 57, 78, 83, 29}
+l2={57, 83, 29, 67, 73, 43, 48}
+set1 = set(l1)
+
+set2 = set(l2)
+
+intersection = set1.intersection(set2)
+
+set1 -= intersection
+
+print(set1)
+-----------------------------------------------------------------------
+5. Itérer une liste donnée et vérifier si un élément donné existe en tant que valeur de clé dans
+un dictionnaire. Sinon, supprimez-le de la liste
+*************************************
+l=[47, 64, 69, 37, 76, 83, 95, 97]
+l1={'Yassine':47, 'Imane':69, 'Mohammed':76, 'Abir':97}
+for element in l:
+  # si l'élément n'existe pas en tant que valeur de clé dans le dictionnaire, supprimer l'élément de la liste
+  if element not in dictionary.values():
+    l.remove(element)
+
+print(l)
